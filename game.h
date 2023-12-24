@@ -35,8 +35,8 @@ void freeGame(Score** game);
  * @return
  */
 Score playGame(Score** game,
-               int (*strategyA) (Score**, int),
-               int (*strategyB) (Score**, int),
+               int (*strategyA) (Score**, int, char),
+               int (*strategyB) (Score**, int, char),
                int* lastTurnA,
                int* lastTurnB);
 
@@ -51,8 +51,8 @@ Score playGame(Score** game,
  * @return
  */
 Score playGames(Score** game,
-               int (*strategyA) (Score**, int),
-               int (*strategyB) (Score**, int),
+               int (*strategyA) (Score**, int, char),
+               int (*strategyB) (Score**, int, char),
                int lastTurnA,
                int lastTurnB,
                int iterations);

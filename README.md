@@ -6,4 +6,4 @@ tournaments of different game theory strategies
 
 - write a decent readme
 - implement more strategies
-- *implement threads* 
+- **implement threads* *
