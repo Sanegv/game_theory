@@ -14,7 +14,7 @@ int main(){
 
     printGame(game);
 
-    Score s = playGames(game, alwaysBetray, alwaysCooperate, COOPERATE, COOPERATE, 3);
+    Score s = playGames(game, doOpponentsLast, alwaysBetray, COOPERATE, COOPERATE, 3);
     printScore(s);
 
     freeGame(game);

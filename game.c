@@ -29,9 +29,12 @@ void freeGame(Score** game){
     free(game);
 }
 
-Score playGame(Score** game, int (*strategyA) (Score**, int), int (*strategyB) (Score**, int), int lastTurnA, int lastTurnB){
-    int a = strategyA(game, lastTurnA);
-    int b = strategyB(game, lastTurnB);
+Score playGame(Score** game, int (*strategyA) (Score**, int), int (*strategyB) (Score**, int), int* lastTurnA, int* lastTurnB){
+    int a = strategyA(game, *lastTurnB);
+    int b = strategyB(game, *lastTurnA);
+
+    *lastTurnA = a;
+    *lastTurnB = b;
 
     return game[a][b];
 }
@@ -40,8 +43,11 @@ Score playGames(Score** game, int (*strategyA) (Score**, int), int (*strategyB) 
     Score s = {0};
     Score tmp;
 
+    int lastA = lastTurnA;
+    int lastB = lastTurnB;
+
     for(int i = 0; i < iterations; i++){
-        tmp = playGame(game, strategyA, strategyB, lastTurnA, lastTurnB);
+        tmp = playGame(game, strategyA, strategyB, &lastTurnA, &lastTurnB);
         s.playerA += tmp.playerA;
         s.playerB += tmp.playerB;
     }

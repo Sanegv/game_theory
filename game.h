@@ -37,8 +37,8 @@ void freeGame(Score** game);
 Score playGame(Score** game,
                int (*strategyA) (Score**, int),
                int (*strategyB) (Score**, int),
-               int lastTurnA,
-               int lastTurnB);
+               int* lastTurnA,
+               int* lastTurnB);
 
 /**
  * @brief plays the specified amount of games using strategy A against strategy B, and returns the total outcome

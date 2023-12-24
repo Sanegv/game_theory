@@ -41,4 +41,20 @@ int alwaysBetray(Score** values, int lastOpponentChoice);
  */
 int random(Score** values, int lastOpponentChoice);
 
+/**
+ * @brief does what the opponent did last turn, ie, returns COOPERATE in case of a cooperation, BETRAY in case of betrayal
+ * @param values
+ * @param lastOpponentChoice
+ * @return
+ */
+int doOpponentsLast(Score** values, int lastOpponentChoice);
+
+/**
+ * @brief returns COOPERATE if the opponent betrayed last turn, returns BETRAY if the opponent cooperated
+ * @param values
+ * @param lastOpponentChoice
+ * @return
+ */
+int doOpponentsOpposite(Score** values, int lastOpponentChoice);
+
 #endif //GAME_THEORY_STRATEGIES_H

@@ -14,3 +14,11 @@ int random(Score** values, int lastOpponentChoice){
 
     return i;
 }
+
+int doOpponentsLast(Score** values, int lastOpponentChoice){
+    return lastOpponentChoice;
+}
+
+int doOpponentsOpposite(Score** values, int lastOpponentChoice){
+    return !lastOpponentChoice;
+}
