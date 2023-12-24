@@ -36,6 +36,19 @@ Score playGame(Score** game, int (*strategyA) (Score**, int), int (*strategyB) (
     return game[a][b];
 }
 
+Score playGames(Score** game, int (*strategyA) (Score**, int), int (*strategyB) (Score**, int), int lastTurnA, int lastTurnB, int iterations){
+    Score s = {0};
+    Score tmp;
+
+    for(int i = 0; i < iterations; i++){
+        tmp = playGame(game, strategyA, strategyB, lastTurnA, lastTurnB);
+        s.playerA += tmp.playerA;
+        s.playerB += tmp.playerB;
+    }
+
+    return s;
+}
+
 void printScore(Score s){
     printf("Player A: %d\nPlayer B: %d\n", s.playerA, s.playerB);
 }

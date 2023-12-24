@@ -40,6 +40,23 @@ Score playGame(Score** game,
                int lastTurnA,
                int lastTurnB);
 
+/**
+ * @brief plays the specified amount of games using strategy A against strategy B, and returns the total outcome
+ * @param game
+ * @param strategyA
+ * @param strategyB
+ * @param lastTurnA
+ * @param lastTurnB
+ * @param iterations
+ * @return
+ */
+Score playGames(Score** game,
+               int (*strategyA) (Score**, int),
+               int (*strategyB) (Score**, int),
+               int lastTurnA,
+               int lastTurnB,
+               int iterations);
+
 void printScore(Score s);
 
 #endif //GAME_THEORY_GAME_H
