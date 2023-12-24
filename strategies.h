@@ -23,6 +23,8 @@ typedef struct score{
  */
 int totalScore(Score);
 
+void printScore(Score s);
+
 /**
  * @brief Always betrays, no matter the input
  * @param values
@@ -69,7 +71,7 @@ int doOpponentsOpposite(Score** values, int lastOpponentChoice, char player);
  * @param lastOpponentChoice
  * @return int
  */
-int maximizeOutcome(Score** values, int lastOpponentChoice, char player);
+int maximizeGlobalOutcome(Score** values, int lastOpponentChoice, char player);
 
 /**
  * @brief chooses the action that minimizes the total outcome of the game
@@ -77,6 +79,42 @@ int maximizeOutcome(Score** values, int lastOpponentChoice, char player);
  * @param lastOpponentChoice
  * @return int
  */
-int minimizeOutcome(Score** values, int lastOpponentChoice, char player);
+int minimizeGlobalOutcome(Score** values, int lastOpponentChoice, char player);
+
+/**
+ * @brief returns the value that could offer the greatest score for the player
+ * @param values
+ * @param lastOpponentChoice
+ * @param player
+ * @return int
+ */
+int maximizeSelfOutcome(Score** values, int lastOpponentChoice, char player);
+
+/**
+ * @brief returns the value that could offer the lowest score for the player
+ * @param values
+ * @param lastOpponentChoice
+ * @param player
+ * @return int
+ */
+int minimizeSelfOutcome(Score** values, int lastOpponentChoice, char player);
+
+/**
+ * @brief returns the value that could offer the greatest score for the other player
+ * @param values
+ * @param lastOpponentChoice
+ * @param player
+ * @return
+ */
+int maximizeOpponentOutcome(Score** values, int lastOpponentChoice, char player);
+
+/**
+ * @brief returns the value that could offer the lowest score for the other player
+ * @param values
+ * @param lastOpponentChoice
+ * @param player
+ * @return
+ */
+int minimizeOpponentOutcome(Score** values, int lastOpponentChoice, char player);
 
 #endif //GAME_THEORY_STRATEGIES_H

@@ -54,7 +54,3 @@ Score playGames(Score** game, int (*strategyA) (Score**, int, char), int (*strat
 
     return s;
 }
-
-void printScore(Score s){
-    printf("Player A: %d\nPlayer B: %d\n", s.playerA, s.playerB);
-}

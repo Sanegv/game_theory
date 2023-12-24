@@ -57,6 +57,4 @@ Score playGames(Score** game,
                int lastTurnB,
                int iterations);
 
-void printScore(Score s);
-
 #endif //GAME_THEORY_GAME_H

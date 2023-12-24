@@ -17,7 +17,7 @@ int main(){
     int lastA = COOPERATE;
     int lastB = COOPERATE;
 
-    Score s = playGame(game, maximizeOutcome, minimizeOutcome, &lastA, &lastB);
+    Score s = playGame(game, minimizeOpponentOutcome, maximizeOpponentOutcome, &lastA, &lastB);
     printScore(s);
 
     freeGame(game);
